@@ -1,0 +1,237 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "* Installation\r\n* namespaces\r\n* exported classes\r\n* constructors\r\n* private members\r\n* public members\r\n* shorthand members\r\n* arrow function ( lambdas )\r\n* delegates\r\n* enums\r\n* casting\r\n* generics\r\n* inheritance\r\n* interfaces are structured\r\n* transpile/compile\r\n* scoping - functions\r\n* scoping - variables\r\n* \"everything\" is a dictionary\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// namespaces are being replaced by expert syntax\r\n// everything inside a namespace is private and we have to export back to use them.\r\nnamespace Typescript.Demo\r\n{    \r\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// * exported classes\r\n\r\nnamespace Typescript.Demo\r\n{\r\n    export class MyFirstClas {\r\n        \r\n    }\r\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// constructors\r\n\r\nnamespace Typescript.Demo\r\n{\r\n    export class MyFirstClas \r\n    {\r\n        // constructor with parameters.\r\n        constructor(firstName: string, lastName: string)\r\n        {\r\n\r\n        }\r\n    }\r\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// private memebers.\r\n\r\nnamespace Typescript.Demo\r\n{\r\n    export class MyFirstClas \r\n    {\r\n        private _fullName: string;\r\n        \r\n        constructor(firstName: string, lastName: string)\r\n        {\r\n            this._fullName = firstName + ` ` + lastName;\r\n        }\r\n    }\r\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// public memebers.\r\n\r\nnamespace Typescript.Demo\r\n{\r\n    export class MyFirstClas \r\n    {\r\n        constructor(firstName: string, lastName: string)\r\n        {\r\n            this.firstName = firstName;\r\n            this.lastName = lastName;\r\n        }\r\n\r\n        // without no gitters and settesr\r\n        firstName: string;\r\n        lastName: string;\r\n    }\r\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// shorthand memebers\r\n\r\nnamespace Typescript.Demo\r\n{\r\n    export class MyFirstClas \r\n    {\r\n        // public member of the class.\r\n        // shorthand members removes lot of boilerplate code.\r\n        constructor(public firstName: string,public lastName: string)\r\n        {\r\n\r\n        }\r\n    }\r\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// properties\r\n\r\nnamespace Typescript.Demo\r\n{\r\n    export class MyFirstClas \r\n    {\r\n        private _fullName: string;\r\n\r\n        constructor(public firstName: string,public lastName: string)\r\n        {\r\n            this.firstName = firstName + ` ` + lastName;\r\n        }\r\n\r\n        // with\r\n        set fullName(value: string) { this._fullName = value;}\r\n        get fullName() {return this.fullName}\r\n    }\r\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// functions\r\n\r\n// by default everything in tyepscript is public. vs C#  everything is private by default.\r\n\r\nnamespace Typescript.Demo\r\n{\r\n    export class MyFirstClas \r\n    {\r\n        doSomething(p : number) : string \r\n        {\r\n            return \"\";\r\n        }\r\n\r\n        doSOmethingElse(x: number, y = 2, z?: number) \r\n        {\r\n\r\n        }\r\n    }\r\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// arrow functions ( lambdas )\r\n\r\nnamespace Typescript.Demo\r\n{\r\n    export class MyFirstClas \r\n    {\r\n        doSomething() : void \r\n        {\r\n            // Tip: for callbacks it is recommended that we have to always use arrow function.\r\n            // normal function will have different behavior  compared to arrow functions.\r\n            document.onLoad = (e) => {\r\n\r\n            }\r\n        }\r\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// delegates ( C# vocab) -> Higher order functions.\r\n\r\nlet fn: (str1: string, str2: string) => string;\r\n\r\nfn = (x,y) => {return x + y};\r\n\r\nlet z = fn(1,2)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// enums\r\n\r\nenum Color {\r\n    Red [= 1],\r\n    Green,\r\n    Blue\r\n};\r\n\r\nlet myColor = Color.Red;\r\nlet myColorName: string = Color[myColor];\r\nlet colorName: string = Color[2];"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// casting\r\n\r\nlet el: HTMLElement = document.getElementById('myButton');\r\n\r\n// note typescript uses <type>.\r\nlet button = <HTMLButtonElement>el;"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// generics types.\r\n\r\nlet strings = new Array<string>();\r\nstrings.push(\"Hellow\");\r\n\r\nlet numbers = new Array<number>();\r\nnumbers.push(1);"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// inheritance\r\n\r\nclass Person {\r\n    constructor(public name: string) {}\r\n}\r\n\r\nclass SuperHero extends Person {\r\n    constructor(name: string, public power: SuperPower){\r\n        // calling base class \r\n        super(name);\r\n    }\r\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// interfaces\r\n\r\ninterface IDoStuff {\r\n    doStuff(param1: string, param2: number): string;\r\n    prop: string;\r\n}\r\n\r\nclass ClassThatDoesStuff implements IDoStuff\r\n{\r\n    // implementation\r\n}\r\n\r\n// inline interface\r\nlet add = (vals: {x: number, y: number}) => vals.x + vals.y;"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// interfaces in typescript are structurlal\r\n\r\ninterface IValues {x: number, y: number}\r\n\r\nfunction add(values: IValues) { return values.x + values.y; }\r\n\r\n\r\n// is not implementing Ivalues\r\nclass MyValues{\r\n    constructor(public x: number, public y: number) {}\r\n}\r\n\r\nlet a = add(new MyValues(1,2));\r\n\r\n// inline interface\r\nlet z = add({x: 1,y: 2});"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// modules replacements of namespaces \r\n\r\n// modules js notion.\r\n// module is a file.\r\nimport { MyOtherClass } from './MyOther'; // ./Myother.TS\r\nimport { MagicClass } from 'MyMagicFramework'; // named module\r\n\r\nexport class MyClass {\r\n    moc = new MyOtherClass();\r\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//  scoping functions.\r\nclass MyFirstClas \r\n{\r\n    doSomething() : void {\r\n        myDependency.doSomethingWithACallBack(function(x: number) {\r\n\r\n            // since we are using function keyword, this is not exactly MyFirstClass\r\n            // scoping function.\r\n            if (this instanceof MyFirstClas) {\r\n                \r\n            }\r\n        }\r\n    }    \r\n}\r\n\r\n// fix with lambda functions.\r\nclass MyFirstClas \r\n{\r\n    doSomething() : void {\r\n        myDependency.doSomethingWithACallBack((x: number) => {\r\n\r\n            // since we are using function keyword, this is not exactly MyFirstClass\r\n            // scoping function.\r\n            if (this instanceof MyFirstClas) {\r\n                \r\n            }\r\n        }\r\n    }    \r\n}\r\n\r\n\r\n// with callback problem.\r\nclass MyFirstClas \r\n{\r\n    doSomething() : void {\r\n        myDependency.doSomethingWithACallBack(this.callback(x));\r\n    }    \r\n\r\n    callback(x: number) {\r\n        // if (this instanceof MyFirstClas) == fasle.\r\n    }\r\n}\r\n\r\n\r\n// fixing with callback problem\r\nclass MyFirstClas \r\n{\r\n    doSomething() : void {\r\n        myDependency.doSomethingWithACallBack(x => this.callback(x));\r\n    }    \r\n\r\n    callback(x: number) {\r\n        // if (this instanceof MyFirstClas) == true.\r\n    }\r\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// scoping - var\r\n\r\nfunction doSomething(p)\r\n{\r\n    if (p){\r\n        // function scoping.\r\n        var x = \"Batman!\";        \r\n    }\r\n    console.log(x); // var x is not declared. \r\n}\r\n\r\ndoSomething(true);\r\n\r\n// fix with let\r\nfunction doSomething(p)\r\n{\r\n    if (p){\r\n        // block scoping.\r\n      let x = \"Batman!\";        \r\n    }\r\n    console.log(x); // var x is not declared. \r\n}\r\n\r\ndoSomething(true);\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "***truthy & Falsy***\r\n\r\nFalsy values: \r\nfalse\r\n0 (Zero)                    if (myObj) {}\r\n\"\" ( empty string)          if (myArray.Lenght) {}\r\nnull\r\nundefined\r\nNaN                         if (!!myObj) {}\r\n\r\nTruthy Values:\r\nEverything else...\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// everything is a dictionary\r\n\r\nlet s = \"hello world\";\r\nlet len1 = s.length;\r\nlet len2 = s['length'];"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
