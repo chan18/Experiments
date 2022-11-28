@@ -1,0 +1,1 @@
+tsc generics\generics.ts
